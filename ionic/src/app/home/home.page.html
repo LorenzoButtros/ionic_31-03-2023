@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Lorenzo's Cool Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Lorenzo's Cool Page</ion-title>
     </ion-toolbar>
   </ion-header>
+  <form #form="ngForm">
+  
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    
+    <ion-card class="backdrop">
+      <ion-card-header>
+        <ion-card-title>Log in</ion-card-title>
+        </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-input label="Email:" placeholder="email@domain.com" required="required" name="login_email" [clearInput]="true" [ngModel]="login_email"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-input label="Password:" type="password" value="password" required="required" name="login_password" [clearInput]="true" [ngModel]="login_password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" shape="round" type="submit" (click)="loginForm(form)" [disabled]="!form.valid" routerLink="/home2">Submit</ion-button>
+        <ion-button shape="round" expand="block" routerLink="/home2">Continue as guest</ion-button>
+      </ion-card-content>
+    </ion-card>
+    
+    
   </div>
+  </form>
 </ion-content>
